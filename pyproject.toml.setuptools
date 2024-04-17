@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "funes"
+description="A python package for big time series data information extraction"
+version = "0.0.1"
+readme = "README.md"
+keywords = ["time series", "funes"]
+authors= [
+    {name = "Binjian Xin", email = "binjian.xin@newrizon.com"},
+]
+maintainers= [
+    {name = "Binjian Xin", email = "binjian.xin@newrizon.com"},
+]
+license = {text = "BSD 3-Clause License"}
+classifiers = [
+    "Frameworks :: Pytest",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "numpy",
+    "scipy",
+    "torch",
+    "sklearn",
+    "matplotlib",
+    "pandas",
+    "tqdm",
+    "pytest",
+    "umap-learn",
+    "elasticsearch",
+    "openpyxl",
+    "absl-py",
+    "ml_collections",
+]
+# dynamic = ["version"]
+
+#[tool.setuptools.packages]
+#find = {}
+
+
+#[tool.setuptools.package-dir]
+#tgan = "funes.tgan"
+#datautils = "funes.datautils"
+
+#[tool.setuptools.packages]
+# find = {} # scan the project directory with the default parameters
+
+[tool.setuptools.packages.find]
+where = ["funes"] # ["."] by default # ["funes"] # ["funes", "tests"] # ["funes", "tests"]
+#include = ["tgan", "datautils"]
+#exclude = ["tgan.tests"]
+namespaces = false
+
+[project.scripts]
+cli-name = "tgan.__main__.main"
+# console_scripts = ["tgan = tgan.tgan_app.__main__"]
+
+#[tool.setuptools.dynamic]
+#version = {attr = "funes.tgan.__version__"}
